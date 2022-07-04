@@ -20,6 +20,7 @@ class NVCCPlugin(Magics):
 
     @staticmethod
     def compile(file_path):
+        print("compiling")
         subprocess.check_output(
             [compiler, file_path + ext, "-gencode", "arch=compute_70,code=sm_70", "-o", file_path + ".out", '-Wno-deprecated-gpu-targets'], stderr=subprocess.STDOUT)
 
